@@ -1,0 +1,51 @@
+.header-container{
+  width: 100%;
+  max-width: 100%;
+  background-color: black;
+}
+
+.logoP{
+  width: 10rem;
+  height: auto;
+}
+
+#nav-link-play{
+  font-size: 1.3rem;
+  width: 4rem;
+  font-weight: bolder;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 44%, rgba(126,126,126,1) 49%, rgba(253,29,29,1) 53%);
+  color: black;
+  border: 3px solid white;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+#nav-link-play:hover{
+  color: rgb(141, 141, 141);
+  transform: scale(105%);
+}
+
+#nav-link-exit{
+  font-size: 1.3rem;
+  width: 4rem;
+  font-weight: bolder;
+  background: rgb(255,255,255);
+  background: linear-gradient(0deg, rgba(255,255,255,1) 44%, rgba(126,126,126,1) 49%, rgba(253,29,29,1) 53%);
+  color: black;
+  border: 3px solid white;
+  border-radius: 50%;
+  text-align: center;
+  margin-right: 2rem;
+}
+
+#nav-link-exit:hover{
+  color: rgb(141, 141, 141);
+  transform: scale(105%);
+}
+
+#nav-icon{
+  background-color: yellow;
+  align-items: flex-end;
+}

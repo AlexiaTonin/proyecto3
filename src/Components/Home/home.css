@@ -1,0 +1,34 @@
+.pagination{
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem 0;
+  padding-bottom: 2rem 1rem;
+}
+
+#left-button{
+  width: auto;
+  height: auto;
+  color: black;
+  background-color: yellow;
+  border: 1px solid rgb(196, 196, 0);
+  border-radius: 10px;
+  margin: 2rem 1rem;
+}
+
+#left-button:hover{
+  transform: scale(110%);
+}
+
+#right-button{
+  width: auto;
+  height: auto;
+  color: black;
+  background-color: yellow;
+  border: 1px solid rgb(196, 196, 0);
+  border-radius: 10px;
+  margin: 2rem 1rem;
+}
+
+#right-button:hover{
+  transform: scale(110%);
+ }

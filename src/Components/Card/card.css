@@ -1,0 +1,33 @@
+#PK-container{
+  width: auto;
+  height: auto;
+  background: black;
+}
+
+#PK-card{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 50%;
+  text-align: center;
+}
+
+#PK-img{
+  height: 60%;
+  width: auto;
+}
+
+#PK-body{
+  padding: 0;
+  margin: 0;
+  width: auto;
+  height: 40%;
+}
+
+.PK-title{
+  color: navy;
+  font-size: 1.5rem;
+}
