@@ -1,37 +1,34 @@
 import './App.css';
-import Header from './Components/Header/Header';
 import Home from './Components/Home/Home';
 import Register from './Components/LoginRegister/Register';
+import Play from './Components/Play/Play';
+import Header from './Components/Header/Header';
 import Footer from './Components/Footer/Footer';
 import {
   BrowserRouter,
   Routes,
   Route,
   Link,
+  useLocation,
 } from "react-router-dom";
 
+
 function App() {
+  const redirect = useLocation();
   return (
-    <div>
-      {/* <Register/> */}
-      <Header/>
-      <Home/>
-      <Footer/>
-    </div>
-    // <BrowserRouter>
-    //   <Routes>
-    //     <Route path='/Header' exact>
-    //       <Header/>
-    //     </Route>
-    //     <Route path='/Home' exact>
-    //       <Home/>
-    //     </Route>
-    //     <Route path='/Play' exact>
-    //       <Play/>
-    //     </Route>
-    //     <Footer/>
-    //   </Routes>
-    // </BrowserRouter>
+    <>
+      {
+        redirect.pathname !== '/' && <Header/>
+      }
+        <Routes>
+          <Route path='/' element={<Register/>}/>
+          <Route path='/home' element={<Home/>}/>
+          <Route path='/play' element={<Play/>}/>
+        </Routes>
+      {
+        redirect.pathname !== '/' && <Footer/>
+      }
+    </>
   );
 }
 

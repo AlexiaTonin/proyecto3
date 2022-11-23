@@ -46,4 +46,5 @@
 .login-direct{
   color: navy;
   font-weight: bolder;
+  cursor: pointer;
 }

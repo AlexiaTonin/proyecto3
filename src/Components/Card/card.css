@@ -1,7 +1,7 @@
 #PK-container{
-  width: auto;
+  width: 100%;
   height: auto;
-  background: black;
+  padding: 0;
 }
 
 #PK-card{
@@ -12,12 +12,17 @@
   width: 20rem;
   height: 20rem;
   border-radius: 50%;
+  border: none;
+  background-image: url(../../Assets/backdropimage.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
   text-align: center;
 }
 
 #PK-img{
-  height: 60%;
+  height: 90%;
   width: auto;
+  margin-top: 1rem;
 }
 
 #PK-body{

@@ -1,13 +1,17 @@
 import React, { useState } from "react";
 import { Alert } from "react-bootstrap";
 import Home from "../Home/Home";
+import Register from "./Register";
 import "./login.css"
+import { Navigate } from "react-router-dom";
 
 function Login() {
   const [emaillog, setEmaillog] = useState(" ");
   const [passwordlog, setPasswordlog] = useState(" ");
   const [flag, setFlag] = useState(false);
   const [home, setHome] = useState(true);
+  const [register, setRegister] = useState(true);
+  // const navigate = useNavigate();
 
   function handleLogin(e) {
     e.preventDefault();
@@ -15,7 +19,7 @@ function Login() {
       .getItem("Password")
       .replace(/"/g, "");
     let mail = localStorage.getItem("Email").replace(/"/g, "");
-    
+
     if (!emaillog || !passwordlog) {
       setFlag(true);
     } else if (passwordlog !== pass || emaillog !== mail) {
@@ -24,6 +28,10 @@ function Login() {
       setHome(!home);
       setFlag(false);
     }
+  }
+
+  function handleClick() {
+    setRegister(!register);
   }
 
   return (
@@ -52,6 +60,10 @@ function Login() {
           <button type="submit" id="register-btn">
             Ingresar
           </button>
+          <p onClick={handleClick} className="forgot-password text-right register-direct">
+            No tienes usuario?{" "} Ingresa aquí
+            {/* {navigate("/Register")} */}
+          </p>
           {flag && (
             <Alert color="primary" variant="danger">
               Credenciales inválidas
@@ -59,7 +71,7 @@ function Login() {
           )}
         </form>
       ) : (
-        <Home/>
+        <Navigate to='/home'/>
       )}
     </div>
   );

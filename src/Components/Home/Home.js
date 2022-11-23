@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./home.css"
 import PokeCard from "../Card/Card";
+import { Row } from "react-bootstrap";
 
 const Home = () => {
 
@@ -18,21 +19,18 @@ const Home = () => {
     const res = await axios.get(url);
     setNextUrl(res.data.next);
     setPrevUrl(res.data.previous);
-    getPokemon(res.data.results)
+    await getPokemon(res.data.results);
     setLoading(false)
   };
 
   const getPokemon = async(res) => {
-    res.map(async(item) => {
-        const result = await axios.get(item.url)
-        setPokeData(state => {
-            state=[...state,result.data]
-            state.sort((a,b) => a.id > b.id? 1:-1)
-            return state;
-        });
-    });
+    const pokemonsInfo = [];
+    for await (const item of res) {
+      const result = await axios.get(item.url)
+      pokemonsInfo.push(result?.data);
+    };
+    setPokeData(pokemonsInfo)
   };
-
   const handleSearch = (e) => {
     setSearchFilter(e.target?.value);
   };
@@ -41,7 +39,9 @@ const Home = () => {
     pokeFun();
   }, [url, searchFilter])
   
-  return (
+  return loading ?
+    <>Loading...</> :
+   (
     <>
     <div id="main-container">
       <div className="d-flex justify-content-center pt-5">
@@ -54,7 +54,13 @@ const Home = () => {
         </div>
       </div>
       <div>
-        <PokeCard pokemon={pokeData} loading={loading}/>
+        <Row xs={1} md={2} lg={3} className="g-0">
+          {
+            pokeData.map((pokemon)=> (
+              <PokeCard pokemon={pokemon}/>
+              ))
+          }
+        </Row>
         <div className="pagination">
           {  prevUrl && <button id="left-button" onClick={() => {
             setPokeData([])

@@ -42,3 +42,9 @@
   color: black;
   transform: scale(90%);
 }
+
+.register-direct{
+  color: navy;
+  font-weight: bolder;
+  cursor: pointer;
+}

@@ -4,7 +4,6 @@ import logoPokemon from "../../Assets/pokemon-logo.png"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
@@ -12,13 +11,13 @@ const Header = () => {
       <Container fluid>
         <div>
           <Navbar.Brand to="/Home">
-            <img src={logoPokemon} className="logoP"></img>
+            <img src={logoPokemon} className="logoP"/>
           </Navbar.Brand>
         </div>
-        <div className="d-flex flex-row-reverse justify-content-center">
+        <div className="d-flex flex-row-reverse">
           <Navbar.Toggle aria-controls="basic-navbar-nav" id="nav-icon"/>
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="my-2 d-flex flex-row">
+            <Nav className="my-2 flex-row">
               <Nav.Link id="nav-link-play" to="/Play" >Play</Nav.Link>
               <Nav.Link id="nav-link-exit" to="/Login" >Salir</Nav.Link>
             </Nav>

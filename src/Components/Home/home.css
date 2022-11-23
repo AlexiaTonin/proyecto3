@@ -7,11 +7,11 @@
 
 #left-button{
   width: auto;
-  height: auto;
-  color: black;
-  background-color: yellow;
-  border: 1px solid rgb(196, 196, 0);
+  height: 3rem;
+  color: white;
+  background-color: rgb(79, 79, 166);
   border-radius: 10px;
+  border: 2px solid rgb(104, 104, 211);
   margin: 2rem 1rem;
 }
 
@@ -21,11 +21,11 @@
 
 #right-button{
   width: auto;
-  height: auto;
-  color: black;
-  background-color: yellow;
-  border: 1px solid rgb(196, 196, 0);
+  height: 3rem;
+  color: white;
+  background-color: rgb(79, 79, 166);
   border-radius: 10px;
+  border: 2px solid rgb(104, 104, 211);
   margin: 2rem 1rem;
 }
 
