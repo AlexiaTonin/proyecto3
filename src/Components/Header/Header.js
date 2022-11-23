@@ -4,13 +4,14 @@ import logoPokemon from "../../Assets/pokemon-logo.png"
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import {Link} from "react-router-dom";
 
 const Header = () => {
   return (
     <Navbar className="header-container px-3" expand="lg">
       <Container fluid>
         <div>
-          <Navbar.Brand to="/Home">
+          <Navbar.Brand>
             <img src={logoPokemon} className="logoP"/>
           </Navbar.Brand>
         </div>
@@ -18,8 +19,8 @@ const Header = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" id="nav-icon"/>
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="my-2 flex-row">
-              <Nav.Link id="nav-link-play" to="/Play" >Play</Nav.Link>
-              <Nav.Link id="nav-link-exit" to="/Login" >Salir</Nav.Link>
+              <Link id="link-play" to="/play"> Play </Link>
+              <Link id="link-exit" to="/"> Salir </Link>
             </Nav>
           </Navbar.Collapse>
         </div>

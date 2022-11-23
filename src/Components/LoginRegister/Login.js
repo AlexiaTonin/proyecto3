@@ -11,7 +11,6 @@ function Login() {
   const [flag, setFlag] = useState(false);
   const [home, setHome] = useState(true);
   const [register, setRegister] = useState(true);
-  // const navigate = useNavigate();
 
   function handleLogin(e) {
     e.preventDefault();
@@ -44,16 +43,18 @@ function Login() {
             <input
               type="email"
               className="form-control"
-              placeholder="Enter email"
+              placeholder="Ingresar email"
+              required
               onChange={(event) => setEmaillog(event.target.value)}
             />
           </div>
           <div className="form-group">
-            <label className="fw-bolder">Password</label>
+            <label className="fw-bolder">Contraseña</label>
             <input
               type="password"
               className="form-control"
-              placeholder="Enter password"
+              placeholder="Ingresar contraseña"
+              required
               onChange={(event) => setPasswordlog(event.target.value)}
             />
           </div>
@@ -62,7 +63,6 @@ function Login() {
           </button>
           <p onClick={handleClick} className="forgot-password text-right register-direct">
             No tienes usuario?{" "} Ingresa aquí
-            {/* {navigate("/Register")} */}
           </p>
           {flag && (
             <Alert color="primary" variant="danger">

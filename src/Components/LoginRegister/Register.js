@@ -19,7 +19,7 @@ function Registration() {
     } else {
       setFlag(false);
       localStorage.setItem("Email", JSON.stringify(email));
-      localStorage.setItem("Contraseña", JSON.stringify(password));
+      localStorage.setItem("Password", JSON.stringify(password));
       setLogin(!login);
     }
   }
@@ -45,6 +45,9 @@ function Registration() {
                 className="form-control"
                 placeholder="Ingresar nombre completo"
                 name="name"
+                required
+                minLength={5}
+                maxLength={30}
                 onChange={(event) => setName(event.target.value)}
               />
             </div>
@@ -54,6 +57,9 @@ function Registration() {
                 type="email"
                 className="form-control"
                 placeholder="Ingresar email"
+                required
+                minLength={5}
+                maxLength={30}
                 onChange={(event) => setEmail(event.target.value)}
               />
             </div>
@@ -63,6 +69,9 @@ function Registration() {
                 type="password"
                 className="form-control"
                 placeholder="Ingresar contraseña"
+                minLength={8}
+                maxLength={30}
+                required
                 onChange={(event) => setPassword(event.target.value)}
               />
             </div>

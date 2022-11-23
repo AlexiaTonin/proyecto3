@@ -1,3 +1,8 @@
+.title-pokedex{
+  font-family: RG;
+  font-size: 5rem;
+  color: rgb(79, 79, 166);
+}
 .pagination{
   display: flex;
   justify-content: center;
@@ -31,4 +36,13 @@
 
 #right-button:hover{
   transform: scale(110%);
+ }
+
+ .spinner-container{
+  height: 75vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
  }
